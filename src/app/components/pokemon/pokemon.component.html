@@ -1,0 +1,50 @@
+<h1>Pokemon</h1>
+<br>
+<div class="row">
+    <div class="col"></div>
+    <div class="col text-right">
+        <button class="bt btn-danger" routerLink="/pokemons">
+            <i class="fa fa-arrow-left"></i>
+            Regresar
+        </button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <form (ngSubmit)="create(form)" #form="ngForm">
+            <div class="form-group">
+                <label>Firebase ID</label>
+                <input type="text" class="form-control" disabled="disabled" [(ngModel)]="pokemonModel.id" name=id>
+                <small class="form-text"></small>
+            </div>
+
+            <div class="form-group">
+                <label>Nombre</label>
+                <input type="text" class="form-control" placeholder="Nombre" required [(ngModel)]="pokemonModel.nombre" name=nombre>
+            </div>
+
+            <div class="form-group">
+                <label>Poder</label>
+                <input type="text" class="form-control" placeholder="Poder" required [(ngModel)]="pokemonModel.poder" name=poder>
+            </div>
+
+            <div class="form-group">
+                <label>Estado</label>
+                <br>
+                <button class="btn btn-outline-success w-50" type="button" *ngIf="pokemonModel.estado" (click)="pokemon.estado=!pokemonModel.estado">Vivo</button>
+                <button class="btn btn-outline-danger w-50" type="button" *ngIf="!pokemonModel.estado" (click)="pokemon.estado=!pokemonModel.estado">Muerto</button>
+            </div>
+
+            <br>
+
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-primary w25">
+                    <i class="fa fa-save"></i>
+                    Guardar
+                </button>
+            </div>
+
+        </form>
+    </div>
+</div>

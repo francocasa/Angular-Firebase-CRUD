@@ -1,0 +1,36 @@
+<h1>Listado Pokemon</h1>
+<br>
+
+<div class="row">
+    <div class="col"></div>
+    <div class="col text-right">
+        <button class="bt btn-primary" routerLink="/pokemon/nuevo">
+            <i class="fa fa-plus"></i>
+            Agregar
+        </button>
+    </div>
+</div>
+
+<table class="table mt-5 table-borderless">
+    <thead class="table-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Poder</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Herramientas</th>
+        </tr>
+    </thead>
+    <tbody class="table-light">
+        <tr *ngFor="let pokemon of pokemons; let index = index">
+            <th scope="row">{{pokemon.id}}</th>
+            <td>{{pokemon.nombre}}</td>
+            <td>{{pokemon.poder}}</td>
+            <td>{{pokemon.estado}}</td>
+            <td>
+                <button class="btn btn-warning mr-2" [routerLink]="['/pokemon', pokemon.id]">Modificar</button>
+                <button class="btn btn-danger" (click)="delete(pokemon.id, index)">Eliminar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
