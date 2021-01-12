@@ -7,7 +7,7 @@ import { map } from "rxjs/operators";
   providedIn: 'root'
 })
 export class PokemonsService {
-  url:string = "https://login-68048-default-rtdb.firebaseio.com";
+  url:string = "//"; // ACA VA EL URL DE FIREBASE DE LA BASE DE DATOS
 
   constructor(private httpClient:HttpClient) { }
 
